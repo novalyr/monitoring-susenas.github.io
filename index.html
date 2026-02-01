@@ -49,17 +49,20 @@ document
 
     const formData = new FormData(this);
 
-    fetch(SCRIPT_URL, {
+      fetch(SCRIPT_URL, {
       method: "POST",
-      body: formData
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
     })
     .then(res => res.json())
-    .then(data => {
+    .then(res => {
       alert("✅ Data berhasil disimpan");
       this.reset();
     })
     .catch(err => {
-      alert("❌ Gagal mengirim data");
+      alert("❌ Gagal menyimpan data");
       console.error(err);
     });
   });
@@ -205,3 +208,4 @@ document
 </div>
 </body>
 </html>
+
