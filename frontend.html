@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Input Monitoring Susenas Maret 2026</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    @media (max-width: 576px) {
+    h4 {
+        font-size: 18px;
+    }
+    }
+
+
+      body {
+    background: #f4f6f9;
+    font-size: 16px;
+    padding: 10px; /* Tambah padding agar tidak nempel tembok layar */
+  }
+  .card {
+    margin-top: 10px; /* Dikurangi agar lebih naik di HP */
+    border-radius: 16px;
+    border: none;
+  }
+  /* Membuat input lebih besar dan mudah ditekan jari */
+  .form-control, .form-select {
+    padding: 12px; 
+    font-size: 16px; 
+  }
+  label {
+    font-weight: 500;
+    margin-bottom: 5px;
+  }    
+  </style>
+</head>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw6U1R-EeqQvwIRH0GtOX1AzvZQ75f9Ggs7KjpA7rTyODDva5no5rNzzuhBRcdlTj5H/exec";
+
+document
+  .getElementById("monitoringForm")
+  .addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert("✅ Data berhasil disimpan");
+      this.reset();
+    })
+    .catch(err => {
+      alert("❌ Gagal mengirim data");
+      console.error(err);
+    });
+  });
+</script>
+
+
+<body>
+<div class="container-fluid px-2">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6x">
+
+      <div class="card shadow">
+        <div class="card-body">
+          <h4 class="text-center mb-4">
+            📋 Monitoring Susenas Maret 2026
+          </h4>
+
+          <form id="monitoringform">
+
+            <!-- NAMA PETUGAS -->
+            <div class="mb-3">
+              <label class="form-label">Nama Petugas</label>
+              <select name="nama_petugas" class="form-select" required>
+                <option value="" disabled selected>-- Pilih Nama Petugas --</option>
+                <option>Adinda Salsabila Pratiwi</option>
+                <option>Agus Santoso</option>
+                <option>Ali Asmar</option>
+                <option>Ananda Fitri Amaliyah</option>
+                <option>Arya Putra</option>
+                <option>Asmuni</option>
+                <option>Atit Ina Nuryanti</option>
+                <option>Ayu Deskarani</option>
+                <option>Azis Marwanto</option>
+                <option>Biyanti Puspa Sari</option>
+                <option>Desi Astika Sari</option>
+                <option>Desi Wardiati</option>
+                <option>Desvi Yanti</option>
+                <option>Dyahworo Priwidyasari</option>
+                <option>Feni Wulandari</option>
+                <option>Gita Yolanda</option>
+                <option>Gusti Lestari</option>
+                <option>Hadi Triyono</option>
+                <option>Hariska Yunila</option>
+                <option>Johanuddin</option>
+                <option>Lamria Dewi Sartika</option>
+                <option>M. Andri Marier Parindra</option>
+                <option>Mandarwati</option>
+                <option>Merry Susanti Siregar</option>
+                <option>Minja Putri Lahisuma</option>
+                <option>Nawan Alpiano</option>
+                <option>Nurazizah</option>
+                <option>Okta Rida Yani</option>
+                <option>Riska Juli Yanti</option>
+                <option>Riyan</option>
+                <option>Riza Deswita</option>
+                <option>Rizki Jamalia Sholihah</option>
+                <option>Sahmono</option>
+                <option>Siti Kodariawat</option>
+                <option>Siti Mutmainah</option>
+                <option>Sri Wahyuni</option>
+                <option>Suheriadi</option>
+                <option>Suratmin Ujang</option>
+                <option>Sutia Ningsih</option>
+                <option>Tri Mulatmi</option>
+                <option>Tuti Rena Haryanti</option>
+                <option>Uswatun Chasanah</option>
+                <option>Yane Puspita Sari</option>
+                <option>Yuliani</option>
+                <option>Yuni Hariyati</option>
+                <option>Yurike Nurjannah</option>
+                <option>Zaitun</option>
+              </select>
+            </div>
+
+            <!-- NKS -->
+            <div class="mb-3">
+              <label class="form-label">Nomor Kode Sampel (NKS)</label>
+              <select name="nks" class="form-select" required>
+                <option value="" disabled selected>-- Pilih NKS --</option>
+                <option>00001</option>
+                <option>00102</option>
+                <option>00128</option>
+                <option>00212</option>
+                <option>00218</option>
+                <option>00376</option>
+                <option>00405</option>
+                <option>00413</option>
+                <option>00487</option>
+                <option>00490</option>
+                <!-- lanjutkan list kamu -->
+              </select>
+            </div>
+
+            <!-- NO URUT RUTA -->
+            <div class="mb-3">
+              <label class="form-label">No. Urut Ruta</label>
+              <input name="no_urut_ruta" class="form-control" required>
+            </div>
+
+            <!-- HASIL KOR -->
+            <div class="mb-3">
+              <label class="form-label">Hasil Pencacahan KOR</label>
+              <select name="hasil_pencacahan_kor" class="form-select" required>
+                <option value="" disabled selected>-- Pilih Hasil --</option>
+                <option>Terisi Lengkap</option>
+                <option>Terisi Tidak Lengkap</option>
+                <option>Tidak ada ART/Responden sampai akhir pendataan</option>
+                <option>Menolak</option>
+                <option>Ruta Pindah</option>
+              </select>
+            </div>
+
+            <!-- HASIL KP -->
+            <div class="mb-3">
+              <label class="form-label">Hasil Pencacahan KP</label>
+              <select name="hasil_pencacahan_kp" class="form-select" required>
+                <option value="" disabled selected>-- Pilih Hasil --</option>
+                <option>Terisi Lengkap</option>
+                <option>Terisi Tidak Lengkap</option>
+                <option>Tidak ada ART/Responden sampai akhir pendataan</option>
+                <option>Menolak</option>
+                <option>Ruta Pindah</option>
+              </select>
+            </div>
+
+            <!-- CATATAN -->
+            <div class="mb-3">
+              <label class="form-label">Catatan</label>
+              <textarea name="catatan" class="form-control" rows="3"></textarea>
+            </div>
+
+            <button class="btn btn-primary btn-lg w-100">
+              💾 Simpan Data
+            </button>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
